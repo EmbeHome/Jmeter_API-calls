@@ -17,7 +17,7 @@ app.get('/data', (req, res) => {
     });
 });
 
-app.post('/data/:id', (req, res) => {
+app.post('/data/id', (req, res) => {
     const { id } = req.params;
     const { surname } = req.body;
 

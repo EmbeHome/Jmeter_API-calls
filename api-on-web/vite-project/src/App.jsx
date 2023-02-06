@@ -11,9 +11,9 @@ function App() {
     });
   };
 
-  useEffect(() => {
-    catFactGenerator();
-  },[]);
+  // useEffect(() => {
+  //   catFactGenerator();
+  // },[]);
 
   return (  
     <div className="App">
