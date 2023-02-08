@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import Axios from 'axios';
 
 function App() {
-  const [fact, setFact] = useState("");
 
+  const [fact, setFact] = useState("");
   const catFactGenerator = () => {
     Axios.get("https://catfact.ninja/fact").then((res) => {
       setFact(res.data.fact)

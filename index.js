@@ -1,4 +1,4 @@
-// Represents the api we are building
+// the api
 const express = require('express');
 const app = express();
 const PORT = 8080;
@@ -10,22 +10,24 @@ app.listen(
     () => console.log(`It's alive on http://localhost:${PORT}`)
 )
 
+const data = [
+    { name: 'John', age: '20'},
+    { name: 'Jane', age: '21'}
+]
+
 app.get('/data', (req, res) => {
-    res.status(200).send({ 
-        name: 'John',
-        age: '20'
-    });
+    res.status(200).send({ data })
 });
 
-app.post('/data/id', (req, res) => {
+app.post('/data/:id', (req, res) => {
     const { id } = req.params;
     const { surname } = req.body;
 
     if(!surname) {
-        res.status(404).send({ message: "No surname found!" })
+        res.status(418).send({ message: "No surname found!" })
     }
 
     res.send({
-        name: `John with your ${surname} and ID of ${id}`,
+        name: `John with surname ${surname} and ID of ${id}`,
     })
 });
